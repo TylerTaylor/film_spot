@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :directors
+  resources :actors
   resources :viewings
   resources :ratings
   devise_for :users
