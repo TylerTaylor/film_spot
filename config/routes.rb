@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
   resources :roles
+  
   resources :movies
-  resources :directors
+  
+  resources :directors do
+    resources :movies
+  end
+  
   resources :actors
+  
   resources :viewings
+  
   resources :ratings
+  
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
