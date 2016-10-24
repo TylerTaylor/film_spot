@@ -1,3 +1,6 @@
 <h2><%= @director.name %></h2>
 
 <p><%= @director.name %>'s movies:</p>
+
+<p><%= button_to 'Add Movie', new_director_movie_path(@director), 
+       params: {director_id: @director.id}, method: :get %></p>
