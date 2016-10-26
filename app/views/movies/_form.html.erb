@@ -14,15 +14,15 @@
   <div class="field <%= 'field_with_errors' if @movie.errors[:title].any? %>">
     <%= f.label :title %>
     <%= f.text_field :title %>
-  </div>
+  </div><br>
 
   <%= f.fields_for :director do |d| %>
-    <%= d.label :name %>
+    <%= d.label :director %>
 
     <%= d.text_field :name, value: @director.name if @director.name %>
   <% end %>
 
-  <br>
+  <br><br>
   <div class="actions">
     <%= f.submit %>
   </div>
