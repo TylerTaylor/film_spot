@@ -8,13 +8,13 @@
   letter-spacing: 0.25em;
 }
 
-.h2 {
-  position: absolute;
-  top: 50px;
-  left: 50px;
-}
-
 .content-container {
   max-width: 80%;
   margin: auto;
+  margin-top: 50px;
+}
+
+.content-container h2 {
+  margin-bottom: 50px;
+  text-align: center;
 }
