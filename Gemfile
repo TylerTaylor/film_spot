@@ -28,6 +28,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 
 gem 'pry'
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'autoprefixer-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
