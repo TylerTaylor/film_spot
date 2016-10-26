@@ -1,10 +1,15 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show]
 
+  def index
+    @movies = Movie.all
+  end
+
   def new
     # binding.pry
     @movie = Movie.new
     @director = @movie.build_director
+
     # binding.pry
     if params[:director_id]
       @director = Director.find(params[:director_id])
