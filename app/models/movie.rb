@@ -2,6 +2,7 @@ class Movie < ActiveRecord::Base
   has_many :roles
   has_many :actors, :through => :roles
   belongs_to :director
+  has_many :viewings
   has_many :ratings
 
   validates :title, presence: true
