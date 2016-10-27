@@ -18,8 +18,12 @@
 
   <%= f.fields_for :director do |d| %>
     <%= d.label :director %>
-
-    <%= d.text_field :name, value: @director.name if @director.name %>
+  
+    <% if params[:director_id] %>
+      <%= d.text_field :name, value: current_director.name %>
+    <% else %>  
+      <%= d.text_field :name %>
+    <% end %>
   <% end %>
 
   <br><br>

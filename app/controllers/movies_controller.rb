@@ -14,6 +14,7 @@ class MoviesController < ApplicationController
     # binding.pry
     @movie = Movie.new
     @director = @movie.build_director
+    # binding.pry
     5.times do
       @movie.actors.build
     end
@@ -27,7 +28,7 @@ class MoviesController < ApplicationController
     # binding.pry
     @movie = Movie.new(movie_params)
     @director = Director.find_by(name: params[:movie][:director_attributes][:name])
-    binding.pry
+    # binding.pry
     if @movie.save
       redirect_to movie_path(@movie)
     else
