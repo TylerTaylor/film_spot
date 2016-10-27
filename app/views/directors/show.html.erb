@@ -1,10 +1,12 @@
 <h2><%= @director.name %></h2>
 
-<p><%= @director.name %>'s movies:</p>
+<div class="show-card">
+  <p><%= @director.name %>'s movies:</p>
 
-<% @director.movies.each do |movie| %>
-  <p><%= link_to movie.title, movie_path(movie) %></p>  
-<% end %>
+  <% @director.movies.each do |movie| %>
+    <p><%= link_to movie.title, movie_path(movie) %></p>  
+  <% end %>
 
-<p><%= button_to 'Add Movie', new_director_movie_path(@director), 
-       params: {director_id: @director.id}, method: :get %></p>
+  <p><%= button_to 'Add Movie', new_director_movie_path(@director), 
+         params: {director_id: @director.id}, method: :get %></p>
+</div>

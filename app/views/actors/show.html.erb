@@ -1,7 +1,9 @@
 <h2><%= @actor.name %></h2>
 
-<p><%= @actor.name %>'s movies:</p>
+<div class="show-card">
+  <p><%= @actor.name %>'s movies:</p>
 
-<% @actor.movies.each do |movie| %>
-  <p><%= link_to movie.title, movie_path(movie) %></p>
-<% end %>
+  <% @actor.movies.each do |movie| %>
+    <p><%= link_to movie.title, movie_path(movie) %></p>
+  <% end %>
+</div>
