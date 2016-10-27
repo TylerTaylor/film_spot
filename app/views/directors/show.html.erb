@@ -7,6 +7,8 @@
     <p><%= link_to movie.title, movie_path(movie) %></p>  
   <% end %>
 
+  <%= link_to "All Movies by #{@director.name}", director_movies_path(@director) %>
+
   <p><%= button_to 'Add Movie', new_director_movie_path(@director), 
          params: {director_id: @director.id}, method: :get %></p>
 </div>

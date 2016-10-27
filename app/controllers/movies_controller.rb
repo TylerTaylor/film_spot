@@ -2,7 +2,11 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: [:show]
 
   def index
-    @movies = Movie.all
+    if params[:director_id]
+      @movies = Movie.where(:director_id => params[:director_id])
+    else
+      @movies = Movie.all
+    end
   end
 
   def new
