@@ -1,5 +1,11 @@
-<h2>Movies</h2>
-
-<% @movies.each do |movie| %>
-  <%= link_to movie.title, movie_path(movie) %> <br><br>
+<% if @director %>
+  <h2><%= @director.name %>'s Movies</h2>
+<% else %>
+  <h2>All Movies</h2>
 <% end %>
+
+<div class="show-card">
+  <% @movies.each do |movie| %>
+    <%= link_to movie.title, movie_path(movie) %> <br><br>
+  <% end %>
+</div>

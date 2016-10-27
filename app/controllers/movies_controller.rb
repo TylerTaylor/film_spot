@@ -3,7 +3,8 @@ class MoviesController < ApplicationController
 
   def index
     if params[:director_id]
-      @movies = Movie.where(:director_id => params[:director_id])
+      @director = Director.find(params[:director_id])
+      @movies = @director.movies
     else
       @movies = Movie.all
     end
