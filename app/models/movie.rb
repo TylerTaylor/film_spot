@@ -11,4 +11,14 @@ class Movie < ActiveRecord::Base
     # self.build_director(director_attribute)
     self.director = Director.where(:name => director_attribute[:name]).first_or_create
   end
+
+  def actors_attributes=(actors_attributes)
+    # actor_attributes = [
+    #   0 => {"name"=>"Steve Buscemi"}
+    #   1 => {"name"=>"Tim Roth"}
+    # ]
+    actors_attributes.each do |i, actor_attributes|
+      self.actors.build(actor_attributes)
+    end
+  end
 end

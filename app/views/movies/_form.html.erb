@@ -23,6 +23,12 @@
   <% end %>
 
   <br><br>
+  <%= f.label :actors %>
+  <%= f.fields_for :actors do |a| %>
+    <%= a.text_field :name %>
+  <% end %>
+
+  <br><br>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -9,7 +9,9 @@ class MoviesController < ApplicationController
     # binding.pry
     @movie = Movie.new
     @director = @movie.build_director
-
+    5.times do
+      @movie.actors.build
+    end
     # binding.pry
     if params[:director_id]
       @director = Director.find(params[:director_id])
@@ -20,7 +22,7 @@ class MoviesController < ApplicationController
     # binding.pry
     @movie = Movie.new(movie_params)
     @director = Director.find_by(name: params[:movie][:director_attributes][:name])
-    # binding.pry
+    binding.pry
     if @movie.save
       redirect_to movie_path(@movie)
     else
@@ -40,7 +42,7 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :director_attributes => [:name])
+    params.require(:movie).permit(:title, :director_attributes => [:name], :actors_attributes => [:name])
   end
 
 end
