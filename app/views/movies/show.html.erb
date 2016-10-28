@@ -10,7 +10,11 @@
 </div>
 
 <div class="viewing">
-  <p>Have you seen this movie?</p>
-  <p><%= link_to 'Yes', new_user_viewing_path(current_user, :movie_id => @movie.id) %></p>
+  <% if viewed?(@movie) %>
+    <p>You've seen this movie!</p>
+  <% else %>
+    <p>Have you seen this movie?</p>
+    <p><%= link_to 'Yes', new_user_viewing_path(current_user, :movie_id => @movie.id) %></p>
+  <% end %>
 </div>
 

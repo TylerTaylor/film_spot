@@ -24,4 +24,5 @@ class Movie < ActiveRecord::Base
       self.actors.build(actor_attributes)
     end
   end
+
 end

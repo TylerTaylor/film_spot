@@ -9,6 +9,7 @@ class ViewingsController < ApplicationController
   def create
     @user.viewings.build(viewing_params)
     @user.save
+    redirect_to movie_path(@movie)
   end
 
   private
