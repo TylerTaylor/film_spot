@@ -3,7 +3,9 @@ class Movie < ActiveRecord::Base
   has_many :actors, :through => :roles
   belongs_to :director
   has_many :viewings
-  has_many :ratings
+  alias_attribute :viewers, :users # calling movie.viewers is more natural than .users
+  has_many :users, :through => :viewings
+  # has_many :ratings, :through => :viewings
 
   validates :title, presence: true
 

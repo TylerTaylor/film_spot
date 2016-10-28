@@ -1,0 +1,25 @@
+<%= form_for(@viewing, url: user_viewings_path) do |f| %>
+  <% if @viewing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@viewing.errors.count, "error") %> prohibited this viewing from being saved:</h2>
+
+      <ul>
+        <% @viewing.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rating %>
+    <%= f.select :rating, options_for_select((1..5).to_a.map{|s| ["#{s} star".pluralize, s]}) %>
+    <%= hidden_field_tag 'movie_id', @movie.id %>
+  </div>
+  
+  <br>
+  <div class="actions">
+    <%= f.submit "Rate this movie" %>
+  </div>
+
+<% end %>
