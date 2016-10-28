@@ -14,7 +14,8 @@
   <div class="field">
     <%= f.label :rating %>
     <%= f.select :rating, options_for_select((1..5).to_a.map{|s| ["#{s} star".pluralize, s]}) %>
-    <%= hidden_field_tag 'movie_id', @movie.id %>
+    <%= f.hidden_field :movie_id, :value => @movie.id %>
+    <%= f.hidden_field :user_id, :value => @user.id %>
   </div>
   
   <br>

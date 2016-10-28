@@ -7,13 +7,18 @@ class ViewingsController < ApplicationController
   end
 
   def create
-    binding.pry
+    @user.viewings.build(viewing_params)
+    @user.save
   end
 
   private
 
   def set_movie
-    @movie = Movie.find(params[:movie_id])
+    if params[:viewing]
+      @movie = Movie.find(params[:viewing][:movie_id])
+    else  
+      @movie = Movie.find(params[:movie_id])
+    end
   end
 
   def set_user
@@ -21,7 +26,7 @@ class ViewingsController < ApplicationController
   end
 
   def viewing_params
-    binding.pry
+    params.require(:viewing).permit(:movie_id, :user_id, :rating)
   end
 
 end
