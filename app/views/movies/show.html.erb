@@ -11,7 +11,7 @@
 
 <div class="viewing">
   <% if viewed?(@movie) %>
-    <p>You've seen this movie!</p>
+    <p><strong><%= user_rating(current_user, @movie) %></strong></p>
   <% else %>
     <p>Have you seen this movie?</p>
     <p><%= link_to 'Yes', new_user_viewing_path(current_user, :movie_id => @movie.id) %></p>
