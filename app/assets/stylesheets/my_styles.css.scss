@@ -4,9 +4,10 @@
 }
 
 .navbar-brand {
-  color: #ebeef4;
+  // color: #ebeef4;
   letter-spacing: 0.25em;
 }
+
 
 .content-container {
   max-width: 80%;
@@ -40,4 +41,17 @@
 
 .viewing {
   margin-top: 20px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ebeef4;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+
+.navbar-header .navbar-brand {
+  color: #ed9e5e;
 }

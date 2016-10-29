@@ -11,9 +11,9 @@
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
-      <div class="navbar navbar-left">
-        <p><%= link_to 'Movies', movies_path %>
-      </div>
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Movies', movies_path %></li>
+      </ul>
       <form class="navbar-form navbar-right" action="/login" method="POST">
         <% if !user_signed_in? %>
           <!-- <div class="form-group">
