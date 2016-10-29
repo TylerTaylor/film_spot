@@ -9,6 +9,7 @@ class Movie < ActiveRecord::Base
 
   validates_presence_of :title, :director
 
+
   def director_attributes=(director_attribute)
     # binding.pry
     # self.build_director(director_attribute)
@@ -26,6 +27,12 @@ class Movie < ActiveRecord::Base
   end
 
   def self.most_viewed
+    # @viewings = Viewing.group(:movie_id).order("count(movie_id) desc")
+    # @viewings.each do |viewing|
+      # binding.pry
+    # end
+
+    @viewed_movies = order('viewings_count DESC')
     binding.pry
   end
   

@@ -11,14 +11,17 @@
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
+      <div class="navbar navbar-left">
+        <p><%= link_to 'Movies', movies_path %>
+      </div>
       <form class="navbar-form navbar-right" action="/login" method="POST">
         <% if !user_signed_in? %>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <input type="text" name="name" placeholder="Name" class="form-control">
             <input type="password" name="password" placeholder="Password" class="form-control">
             <input type="submit" value="Sign In" class="btn btn-success">
-          </div>
-
+          </div> -->
+          <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-success' %>
           
 
           <!-- <a href="/login" class="btn btn-default nav-btn" type="submit">Sign in</a> -->

@@ -9,6 +9,7 @@ class ViewingsController < ApplicationController
   def create
     @user.viewings.build(viewing_params)
     @user.save
+    Movie.reset_counters(@movie, :viewings)
     redirect_to movie_path(@movie)
   end
 
