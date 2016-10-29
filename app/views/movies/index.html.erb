@@ -8,6 +8,8 @@
   <% @movies.each do |movie| %>
     <%= link_to movie.title, movie_path(movie) %> <br><br>
   <% end %>
-  
+
   <p><%= button_to 'Add Movie', new_movie_path, method: :get %></p>
+  <%= link_to 'Most Viewed Movies', '/movies/most_viewed' %>
 </div>
+

@@ -41,6 +41,10 @@ class MoviesController < ApplicationController
   def show
   end
 
+  def most_viewed_movies
+    Movie.most_viewed
+  end
+
   private
 
   def set_movie

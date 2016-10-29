@@ -7,7 +7,7 @@ class Movie < ActiveRecord::Base
   has_many :users, :through => :viewings
   # has_many :ratings, :through => :viewings
 
-  validates :title, presence: true
+  validates_presence_of :title, :director
 
   def director_attributes=(director_attribute)
     # binding.pry
@@ -25,6 +25,9 @@ class Movie < ActiveRecord::Base
     end
   end
 
+  def self.most_viewed
+    binding.pry
+  end
   
 
 end
