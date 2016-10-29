@@ -1,1 +1,7 @@
 <h2>Most Viewed Movies</h2>
+
+<div class="show-card">
+  <% @most_viewed_movies.each do |movie| %>
+    <%= link_to movie.title, movie_path(movie) %> - <%= "#{movie.viewings_count} " + "viewing".pluralize(movie.viewings_count) %><br><br>
+  <% end %>
+</div>

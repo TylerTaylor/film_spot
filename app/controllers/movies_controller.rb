@@ -42,7 +42,7 @@ class MoviesController < ApplicationController
   end
 
   def most_viewed_movies
-    Movie.most_viewed
+    @most_viewed_movies = Movie.most_viewed
   end
 
   private

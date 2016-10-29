@@ -32,8 +32,7 @@ class Movie < ActiveRecord::Base
       # binding.pry
     # end
 
-    @viewed_movies = order('viewings_count DESC')
-    binding.pry
+    order('viewings_count DESC')
   end
   
 

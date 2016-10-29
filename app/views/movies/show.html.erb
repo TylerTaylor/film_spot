@@ -10,11 +10,17 @@
 </div>
 
 <div class="viewing">
-  <% if viewed?(@movie) %>
-    <p><strong><%= user_rating(current_user, @movie) %></strong></p>
+  <% if current_user %>
+    <% if viewed?(@movie) %>
+      <p><strong><%= user_rating(current_user, @movie) %></strong></p>
+    <% else %>
+      <p>Have you seen this movie?</p>
+      <% binding.pry %>
+      <p><%= link_to 'Yes', new_user_viewing_path(current_user, :movie_id => @movie.id) %></p>
+    <% end %>
   <% else %>
-    <p>Have you seen this movie?</p>
-    <p><%= link_to 'Yes', new_user_viewing_path(current_user, :movie_id => @movie.id) %></p>
+    <br>
+    <p>(<%= link_to 'Sign In', new_user_session_path %> to rate this movie)</p>
   <% end %>
 </div>
 
