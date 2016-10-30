@@ -32,7 +32,7 @@
 .navbar-div {
   display: inline;
   margin-right: 20px;
-  color: #fff;
+  color: #ebeef4;
 }
 
 .show-card, .viewing {
@@ -54,4 +54,18 @@
 
 .navbar-header .navbar-brand {
   color: #ed9e5e;
+}
+
+.btn-success {
+  border-color: #ed9e5e;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: #92d185;
+    border-color: #92d185;
+}
+
+.btn-orange {
+  background-color: #ed9e5e;
 }
