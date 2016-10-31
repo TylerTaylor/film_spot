@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show]
+  before_action :authenticate_user!, only: [:new, :create, :movies_viewed_by_user]
+  before_action :find_user, only: [:movies_viewed_by_user]
 
   def index
     if params[:director_id]
@@ -45,13 +47,23 @@ class MoviesController < ApplicationController
   end
 
   def movies_viewed_by_user
-    @movies_viewed_by_user = current_user.seen_movies
+    if @user
+      @movies_viewed_by_user = @user.seen_movies
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   private
 
   def set_movie
     @movie = Movie.find(params[:id])
+  end
+
+  def find_user
+    @user = User.find(params[:user_id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to movies_path
   end
 
   def movie_params
