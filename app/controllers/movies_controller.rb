@@ -44,6 +44,10 @@ class MoviesController < ApplicationController
     @most_viewed_movies = Movie.most_viewed
   end
 
+  def movies_viewed_by_user
+    @movies_viewed_by_user = current_user.seen_movies
+  end
+
   private
 
   def set_movie

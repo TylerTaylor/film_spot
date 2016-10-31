@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # get 'static/index'
   root 'static#index'
   get 'movies/most_viewed' => 'movies#most_viewed_movies', as: 'most_viewed_movies'
+  get 'users/:user_id/viewed_movies' => 'movies#movies_viewed_by_user', as: 'user_viewed_movies' 
 
   devise_for :users
   resources :users do

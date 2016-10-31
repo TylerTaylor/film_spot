@@ -1,0 +1,11 @@
+<h2>Movies You've Seen</h2>
+
+<div class="center">
+  <%= link_to 'View All Movies', movies_path %>
+</div> <br><br>
+
+<div class="show-card">
+  <% @movies_viewed_by_user.each do |movie| %>
+    <%= link_to movie.title, movie_path(movie) %> <br><br>
+  <% end %>
+</div>
