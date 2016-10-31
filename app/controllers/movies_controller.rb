@@ -25,7 +25,6 @@ class MoviesController < ApplicationController
   end
 
   def create
-    # binding.pry
     @movie = Movie.new(movie_params)
     @director = Director.find_by(name: params[:movie][:director_attributes][:name])
     # binding.pry

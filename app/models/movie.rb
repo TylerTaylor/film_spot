@@ -22,7 +22,9 @@ class Movie < ActiveRecord::Base
     #   1 => {"name"=>"Tim Roth"}
     # ]
     actors_attributes.each do |i, actor_attributes|
-      self.actors.build(actor_attributes)
+      if !actor_attributes[:name].empty? # there are 5 fields on the form. It should be okay
+        self.actors.build(actor_attributes) # to add just one actor and leave the rest blank
+      end
     end
   end
 
