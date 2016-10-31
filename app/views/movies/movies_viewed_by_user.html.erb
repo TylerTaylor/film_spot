@@ -4,6 +4,7 @@
 
 <div class="show-card">
   <% @movies_viewed_by_user.each do |movie| %>
-    <%= link_to movie.title, movie_path(movie) %> <br><br>
+    <%= link_to movie.title, movie_path(movie) %>
+     - <%= "#{user_rating(movie)} " + "star".pluralize(user_rating(movie)) %><br><br>
   <% end %>
 </div>

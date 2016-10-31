@@ -12,4 +12,8 @@ module ViewingsHelper
       "(Unseen by you)"
     end
   end
+
+  def user_rating(movie)
+    movie.viewings.where(user_id: current_user.id).first.rating
+  end
 end
