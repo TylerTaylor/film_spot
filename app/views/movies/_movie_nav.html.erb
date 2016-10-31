@@ -1,0 +1,23 @@
+<div class="center">
+  <div class="movie-show-options">
+   <%= link_to 'All Movies', movies_path %> 
+  </div>
+
+  |
+  <div class="movie-show-options"> 
+    <%= link_to 'Most Viewed Movies', '/movies/most_viewed' %> <!-- movies#most_viewed_movies --> 
+  </div>
+
+  |
+  <% if current_user %>
+    <div class="movie-show-options">
+      <%= link_to "Movies I've seen", user_viewed_movies_path(current_user) %> <!-- --> 
+    </div>
+  <% end %>
+  |
+
+  <div class="movie-show-options"> 
+    <%= link_to 'Add Movie', new_movie_path %>
+  </div>
+
+</div>

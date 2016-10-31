@@ -1,8 +1,6 @@
 <h2>Movies You've Seen</h2>
 
-<div class="center">
-  <%= link_to 'View All Movies', movies_path %>
-</div> <br><br>
+<%= render 'movie_nav' %><br><br>
 
 <div class="show-card">
   <% @movies_viewed_by_user.each do |movie| %>

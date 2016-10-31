@@ -1,8 +1,6 @@
 <h2>Most Viewed Movies</h2>
 
-<div class="center">
-  <%= link_to 'View All Movies', movies_path %>
-</div> <br><br>
+<%= render 'movie_nav' %><br><br>
 
 <div class="show-card">
   <% @most_viewed_movies.each do |movie| %>
