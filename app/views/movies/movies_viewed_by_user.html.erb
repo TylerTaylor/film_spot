@@ -1,4 +1,8 @@
-<h2>Movies You've Seen</h2>
+<% if params[:user_id].to_i != current_user.id %>
+  <h2>Movies seen by <%= user_by_params(params) %></h2>
+<% else %>
+  <h2>Movies You've Seen</h2>
+<% end %>
 
 <%= render 'movie_nav' %><br><br>
 
