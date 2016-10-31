@@ -6,4 +6,13 @@ class User < ActiveRecord::Base
 
   has_many :viewings
   has_many :movies, through: :viewings
+  attr_accessor :seen
+
+  def seen
+    # self.viewings.each do |viewing|
+
+    # end
+    self.seen = self.viewings.all
+  end
+
 end
