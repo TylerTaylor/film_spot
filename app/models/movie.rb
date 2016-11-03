@@ -11,7 +11,6 @@ class Movie < ActiveRecord::Base
 
 
   def director_attributes=(director_attribute)
-    # binding.pry
     # self.build_director(director_attribute)
     self.director = Director.where(:name => director_attribute[:name]).first_or_create
   end
