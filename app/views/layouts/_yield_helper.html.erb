@@ -1,12 +1,8 @@
+<!-- We don't want the home page to have the same layout, content-container effects jumbotron -->
 <% if path == "/" %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
   <%= yield %>
 <% else %>
   <div class="content-container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
     <%= yield %>
   </div>
 <% end %>

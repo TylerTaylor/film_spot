@@ -1,0 +1,6 @@
+<div class="flash-errors">
+  <p class=<%= "notice" if flash[:notice] %>><%= notice %></p>
+  <p class=<%= "alert" if flash[:alert] %>><%= alert %></p>
+
+  <% flash.clear %>  
+</div>

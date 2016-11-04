@@ -12,13 +12,13 @@ body {
   letter-spacing: 0.25em;
 }
 
-
 .content-container {
   max-width: 80%;
   margin: auto;
   margin-top: 80px;
   background-color: #fff;
   height: 100vh;
+  border-radius: 6px;
   // -webkit-box-shadow: -1px 1px 6px 0px rgba(0,0,0,0.75);
   // -moz-box-shadow: -1px 1px 6px 0px rgba(0,0,0,0.75);
   // box-shadow: -1px 1px 6px 0px rgba(0,0,0,0.75);
@@ -29,8 +29,23 @@ body {
   text-align: center;
 }
 
+.flash-errors {
+  margin-top: 90px;
+}
+
+p {
+  margin: 0px;
+}
+
 .alert {
-  padding: 0;
+  background-color: rgba(255, 0, 0, 0.3);
+  border: 0px;
+}
+
+.notice {
+  background-color: #92d185;
+  border: 0px;
+  padding: 15px;
 }
 
 .new-movie {
@@ -41,6 +56,9 @@ body {
   border-radius: 6px;
   text-align: center;
   background-color: #fff;
+  margin: auto;
+  margin-top: 70px;
+  max-width: 80%;
 }
 
 .center {
