@@ -1,0 +1,12 @@
+<% if path == "/" %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
+<% else %>
+  <div class="content-container">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
+    <%= yield %>
+  </div>
+<% end %>

@@ -1,3 +1,7 @@
+body {
+  background-color: #e8e8e8;
+}
+
 .navbar {
   margin-bottom: 0px;
   background-color: #555;
@@ -12,17 +16,31 @@
 .content-container {
   max-width: 80%;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 80px;
+  background-color: #fff;
+  height: 100vh;
+  // -webkit-box-shadow: -1px 1px 6px 0px rgba(0,0,0,0.75);
+  // -moz-box-shadow: -1px 1px 6px 0px rgba(0,0,0,0.75);
+  // box-shadow: -1px 1px 6px 0px rgba(0,0,0,0.75);
 }
 
 .content-container h2 {
-  margin-bottom: 30px;
+  padding-top: 20px;
   text-align: center;
+}
+
+.alert {
+  padding: 0;
+}
+
+.new-movie {
+  padding-top: 50px;
 }
 
 .jumbotron {
   border-radius: 6px;
   text-align: center;
+  background-color: #fff;
 }
 
 .center {
@@ -37,7 +55,9 @@
 }
 
 .show-card, .viewing {
-  margin-left: 180px;
+  margin: auto;
+  max-width: 75%;
+  // background-color: #fff;
 }
 
 .viewing {

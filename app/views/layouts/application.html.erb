@@ -24,13 +24,8 @@
         <%= render 'layouts/nav' %>
       </nav>
 
-      <div class="content-container">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        
+      <%= render partial: 'layouts/yield_helper', locals: {path: request.env['PATH_INFO']} %>
 
-        <%= yield %>
-      </div>
     </div>
 
   </body>
