@@ -23,7 +23,7 @@
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <%= render 'layouts/nav' %>
       </nav>
-
+      
       <%= render 'layouts/flash_messages' if !flash.empty? %>
 
       <%= render partial: 'layouts/yield_helper', locals: {path: request.env['PATH_INFO']} %>

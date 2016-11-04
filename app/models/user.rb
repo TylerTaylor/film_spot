@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :viewings
-  has_many :movies, through: :viewings
+  #has_many :movies, through: :viewings
   attr_accessor :seen_movies
 
   def seen_movies

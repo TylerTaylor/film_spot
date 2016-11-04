@@ -20,7 +20,7 @@
     <%= d.label :director %>
   
     <% if params[:director_id] %>
-      <%= d.text_field :name, value: current_director.name %>
+      <%= d.text_field :name, value: @director.name %>
     <% else %>  
       <%= d.text_field :name %>
     <% end %>
