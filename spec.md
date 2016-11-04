@@ -35,7 +35,7 @@ Specs:
 - [x] Include logout (how e.g. Devise)
 
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
-      - Used Devise
+      - Used Devise and OmniAuth Facebook
 
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
       - directors/:id/movies
