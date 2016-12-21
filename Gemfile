@@ -34,7 +34,7 @@ gem 'autoprefixer-rails'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
-
+gem 'rb-readline'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

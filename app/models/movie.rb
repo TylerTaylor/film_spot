@@ -35,6 +35,14 @@ class Movie < ActiveRecord::Base
 
     order('viewings_count DESC')
   end
+
+  def average_rating
+    "#{self.viewings.average(:rating).to_i} stars"
+  end
+
+  def self.highest_rating
+    Viewing.order('rating desc').group('movie_id').first.movie.title
+  end
   
 
 end

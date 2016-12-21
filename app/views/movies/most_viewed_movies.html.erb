@@ -4,6 +4,10 @@
 
 <div class="show-card">
   <% @most_viewed_movies.each do |movie| %>
-    <%= link_to movie.title, movie_path(movie) %> - <%= "#{movie.viewings_count} " + "viewing".pluralize(movie.viewings_count) %> - <%= view_status(movie) %><br><br>
+    <%= link_to movie.title, movie_path(movie) %> - <%= "#{movie.viewings_count} " + "viewing".pluralize(movie.viewings_count) %> - <%= movie.average_rating %> - <%= view_status(movie) %><br><br>
   <% end %>
+</div>
+
+<div class="show-card">
+  <p><strong>The highest rated movie is: <%= Movie.highest_rating %></strong></p>
 </div>
