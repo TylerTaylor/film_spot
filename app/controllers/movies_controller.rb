@@ -38,6 +38,10 @@ class MoviesController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @movie }
+    end
   end
 
   def most_viewed_movies
