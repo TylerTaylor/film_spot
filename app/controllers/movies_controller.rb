@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   before_action :find_user, only: [:movies_viewed_by_user]
 
   def index
-    binding.pry
+    # binding.pry
     if params[:director_id]
       @director = Director.find(params[:director_id])
       @movies = @director.movies

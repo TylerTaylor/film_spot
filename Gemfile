@@ -36,6 +36,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'rb-readline'
 
+gem 'active_model_serializers'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
