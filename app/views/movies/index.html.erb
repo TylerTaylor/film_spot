@@ -7,9 +7,5 @@
 <%= render 'movie_nav' %> <br>
 
 <div class="show-card">
-  <% @movies.each do |movie| %>
-    <%= link_to movie.title, movie_path(movie) %> <br><br>
-  <% end %>
-
+  <%= render 'movies' %>
 </div>
-

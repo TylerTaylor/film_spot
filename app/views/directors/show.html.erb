@@ -3,11 +3,9 @@
 <div class="show-card">
   <p><%= @director.name %>'s movies:</p>
 
-  <% @director.movies.each do |movie| %>
-    <p><%= link_to movie.title, movie_path(movie) %></p>  
-  <% end %>
+  <%= render 'movies/movies' %>
 
-  <%= link_to "All Movies by #{@director.name}", director_movies_path(@director) %>
+  <%= link_to "All Movies by #{@director.name}", director_movies_path(@director), class: "all-movies" %>
 
   <p><%= button_to 'Add Movie', new_director_movie_path(@director), 
          params: {director_id: @director.id}, method: :get %></p>
