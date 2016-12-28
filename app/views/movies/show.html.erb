@@ -15,7 +15,7 @@
       <p><strong><%= user_rating_display(current_user, @movie) %></strong></p>
     <% else %>
       <p>Have you seen this movie?</p>
-      <p><%= link_to 'Yes', new_user_viewing_path(current_user, :movie_id => @movie.id) %></p>
+      <p><%= link_to 'Yes', new_user_viewing_path(current_user, :movie_id => @movie.id), class: 'clicked-yes' %></p>
     <% end %>
   <% else %>
     <br>
