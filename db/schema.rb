@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103173108) do
+ActiveRecord::Schema.define(version: 20161227215434) do
 
   create_table "actors", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20161103173108) do
     t.datetime "updated_at",                 null: false
     t.integer  "director_id"
     t.integer  "viewings_count", default: 0
+    t.text     "description"
   end
 
   create_table "ratings", force: :cascade do |t|
