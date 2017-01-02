@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show]
-  before_action :authenticate_user!, only: [:new, :create, :movies_viewed_by_user]
+  before_action :authenticate_user!, only: [:new, :create, :movies_viewed_by_user, :movie_picker_api]
   before_action :find_user, only: [:movies_viewed_by_user]
 
   def index
@@ -79,7 +79,12 @@ class MoviesController < ApplicationController
   end
 
   def movie_picker_api
-    @movie = Movie.random_movie.first
+    if current_user
+      @movie = Movie.random_movie(current_user)
+    else
+      @movie = Movie.random_movie
+    end
+      
     render 'random_movie'
   end
 
