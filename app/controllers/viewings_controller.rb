@@ -4,13 +4,22 @@ class ViewingsController < ApplicationController
 
   def new
     @viewing = Viewing.new
+    binding.pry
+
+    render 'viewings/new', layout: false
   end
 
   def create
+    binding.pry
     @user.viewings.build(viewing_params)
+    @viewing = @user.viewings.last
     @user.save
     Movie.reset_counters(@movie, :viewings)
-    redirect_to movie_path(@movie)
+    # redirect_to movie_path(@movie)
+
+    respond_to do |format|
+      format.json { render json: @viewing }
+    end
   end
 
   private
