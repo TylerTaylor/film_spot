@@ -79,6 +79,7 @@ class MoviesController < ApplicationController
   end
 
   def movie_picker_api
+    @movie = Movie.random_movie.first
     render 'random_movie'
   end
 
