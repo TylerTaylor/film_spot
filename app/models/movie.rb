@@ -36,12 +36,22 @@ class Movie < ActiveRecord::Base
     order('viewings_count DESC')
   end
 
+  # finds the average rating of one instance of a movie
   def average_rating
     "#{self.viewings.average(:rating).to_i} stars"
   end
 
+  # finds the movie with the highest rating
   def self.highest_rating
     Viewing.order('rating desc').group('movie_id').first.movie.title
+  end
+
+  # find a random movie to suggest to the user
+  ## maybe find only movies the user has not seen?
+  ### we might want to make it check what the current suggestion is, and make sure the next one is not the same?
+
+  def self.random_movie
+    Movie.order("RANDOM()").limit(1)
   end
   
 

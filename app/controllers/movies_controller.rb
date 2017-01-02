@@ -28,13 +28,6 @@ class MoviesController < ApplicationController
     if params[:director_id]
       @director = Director.find(params[:director_id])
       @movies = @director.movies
-
-      # respond_to do |format|
-      #   format.html { render 'index' }
-      #   format.json { render json: @movies}
-      # end
-      # render 'index', :layout => false
-      # render 'movies/_movies', :layout => false
     else
       @movies = Movie.all
     end
@@ -83,6 +76,10 @@ class MoviesController < ApplicationController
     else
       redirect_to new_user_session_path
     end
+  end
+
+  def movie_picker_api
+    render 'random_movie'
   end
 
   private
