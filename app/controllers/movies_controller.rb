@@ -4,13 +4,42 @@ class MoviesController < ApplicationController
   before_action :find_user, only: [:movies_viewed_by_user]
 
   def index
-    # binding.pry
     if params[:director_id]
       @director = Director.find(params[:director_id])
       @movies = @director.movies
+
+      # respond_to do |format|
+      #   format.html { render 'index' }
+      #   format.json { render json: @movies}
+      # end
+      # render 'index', :layout => false
+      # render 'movies/_movies', :layout => false
     else
       @movies = Movie.all
     end
+
+    respond_to do |format|
+      format.html { render 'index' }
+      format.json { render json: @movies}
+    end
+  end
+
+  def api_index
+    if params[:director_id]
+      @director = Director.find(params[:director_id])
+      @movies = @director.movies
+
+      # respond_to do |format|
+      #   format.html { render 'index' }
+      #   format.json { render json: @movies}
+      # end
+      # render 'index', :layout => false
+      # render 'movies/_movies', :layout => false
+    else
+      @movies = Movie.all
+    end
+
+    render json: @movies
   end
 
   def new
