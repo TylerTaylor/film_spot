@@ -2,17 +2,3 @@
 
 <%= render 'movie_info' %>
 
-<div class="viewing">
-  <% if current_user %>
-    <% if viewed?(@movie) %>
-      <p><strong><%= user_rating_display(current_user, @movie) %></strong></p>
-    <% else %>
-      <p>Have you seen this movie?</p>
-      <p><%= link_to 'Yes', new_user_viewing_path(current_user, :movie_id => @movie.id), class: 'clicked-yes' %></p>
-    <% end %>
-  <% else %>
-    <br>
-    <p>(<%= link_to 'Sign In', new_user_session_path %> to rate this movie)</p>
-  <% end %>
-</div>
-
