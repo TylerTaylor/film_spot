@@ -7,13 +7,18 @@ class User < ActiveRecord::Base
 
   has_many :viewings
   #has_many :movies, through: :viewings
-  attr_accessor :seen_movies
+  attr_accessor :seen_movies, :unseen_movies
 
   def seen_movies
     # for each viewing we need to get the movie_id
     # then we should return a collection of movie instances found by those movie_ids
     # that way we can type movie.title instead of viewing.movie.title in the views
     self.seen_movies = self.viewings.collect { |viewing| viewing.movie }
+  end
+
+  def unseen_movies
+    # unseen = Movie.all.collect { |movie| movie if !self.seen_movies.include?(movie) }
+    unseen = Movie.all.select { |movie| movie if !self.seen_movies.include?(movie) }.map{ |movie| movie }
   end
 
   def self.from_omniauth(auth)

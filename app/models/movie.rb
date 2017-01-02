@@ -50,8 +50,16 @@ class Movie < ActiveRecord::Base
   ## maybe find only movies the user has not seen?
   ### we might want to make it check what the current suggestion is, and make sure the next one is not the same?
 
-  def self.random_movie
-    Movie.order("RANDOM()").limit(1)
+  # def self.random_movie
+  #   Movie.order("RANDOM()").limit(1)
+  # end
+
+  def self.random_movie(user = nil)
+    if user
+      @movie = user.unseen_movies.sample
+    else
+      @movie = Movie.order("RANDOM()").limit(1)
+    end
   end
   
 
