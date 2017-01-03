@@ -85,7 +85,12 @@ class MoviesController < ApplicationController
       @movie = Movie.random_movie
     end
       
-    render 'random_movie'
+    # render 'random_movie'
+    respond_to do |format|
+      format.html { render 'random_movie' }
+      format.json { render json: @movie }
+    end
+    
   end
 
   private
