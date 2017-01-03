@@ -55,7 +55,7 @@ Suggestion.prototype.actorsLinks = function() {
 }
 
 Suggestion.prototype.viewingLink = function() {
-  let html = '<div class="viewing"><p>Have you seen this movie?</p>'
+  let html = '<div class="viewing center"><p>Have you seen this movie?</p>'
   // html += '<p><a class="clicked-yes" href="/users/' + this.intended_user + '/viewings/new?movie_id=' + this.id + '">Yes</a>'
   html += `<p><a class="clicked-yes" href="/users/${this.intended_user}/viewings/new?movie_id=${this.id}">Yes</a>`
 
