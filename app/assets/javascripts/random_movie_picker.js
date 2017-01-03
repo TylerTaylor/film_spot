@@ -47,7 +47,8 @@ Suggestion.prototype.actorsLinks = function() {
   let actors = this.actors
 
   for (let i = 0; i < actors.length; i++) {
-    html += '<a href="/actors/' + actors[i].id + '">' + actors[i].name + '</a><br>'
+    // html += '<a href="/actors/' + actors[i].id + '">' + actors[i].name + '</a><br>'
+    html += `<a href="/actors/${actors[i].id}">${actors[i].name}</a><br>`
   }
 
   return html
