@@ -42,7 +42,7 @@ function Viewing(rating) {
 // create a function for that object's prototype - format and add it to the current page?
 Viewing.prototype.showRating = function() {
   var ratingHtml = ''
-  ratingHtml += '<p><strong>You rated this: ' + this.countStars() + ' stars</strong></p>' 
+  ratingHtml += `<p><strong>You rated this: ${this.countStars()} stars</strong></p>`
 
   return ratingHtml
 }
