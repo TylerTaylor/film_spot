@@ -37,7 +37,7 @@ Suggestion.prototype.formatSuggestion = function() {
 }
 
 Suggestion.prototype.directorLink = function() {
-  let html = '<p>Directed by <a href="/directors/' + this.director.id + '">' + this.director.name + '</a></p>'
+  let html = `<p>Directed by <a href="/directors/${this.director.id}">${this.director.name}</a></p>`
 
   return html
 }
