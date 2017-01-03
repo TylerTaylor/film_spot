@@ -23,15 +23,29 @@ function Suggestion(id, title, director, description, actors) {
 }
 
 Suggestion.prototype.formatSuggestion = function() {
-  var suggestionHtml = ''
-  suggestionHtml += '<h3 class="center">' + this.title + '</h3>'
-  suggestionHtml += '<p>Directed by ' + this.director.name + '</p>'
+  let html = ''
+  html += '<h3 class="center">' + this.title + '</h3>'
+  // html += '<p>Directed by ' + this.director.name + '</p>'
+  html += this.directorLink()
+  html += '<p>Starring:</p>'
+  html += this.actorsLinks()
 
-  return suggestionHtml
+  return html
 }
 
 Suggestion.prototype.directorLink = function() {
-  let link = '<a href="/directors/' + this.director.id + '">' + this.director.name + '</a>'
+  let html = '<p>Directed by <a href="/directors/' + this.director.id + '">' + this.director.name + '</a></p>'
 
-  return link
+  return html
+}
+
+Suggestion.prototype.actorsLinks = function() {
+  let html = ''
+  let actors = this.actors
+
+  for (let i = 0; i < actors.length; i++) {
+    html += '<a href="/actors/' + actors[i].id + '">' + actors[i].name + '</a><br>'
+  }
+
+  return html
 }
