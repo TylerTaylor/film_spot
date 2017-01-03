@@ -8,7 +8,8 @@ Specs:
 - [x] Include at least one link that loads or updates a resource without reloading the page.
 -  -  - On a movie's show page, clicking 'yes' loads the new viewing form via AJAX without reloading the page. Then choosing a rating will update the viewing resource and display a star rating.
 - [ ] Translate JSON responses into js model objects.
-- [ ] At least one of the js model objects must have at least one method added by your code to the prototype.
+- [x] At least one of the js model objects must have at least one method added by your code to the prototype.
+-  -  - When we 'view' a movie, it creates a JS object called Viewing. Viewing's prototype has methods called 'showRating' and 'countStars'
 
 Confirm
 - [ ] You have a large number of small Git commits
