@@ -1,14 +1,14 @@
-<% if request.path == "/movies/random_movie_picker" %>
-  <h3 class="center"><%= @movie.title %></h3>
-<% end %>
-
 <div class="show-card">
+  <% if request.path == "/movies/random_movie_picker" %>
+    <h3 class="center"><%= @movie.title %></h3>
+  <% end %>
+
   <p>Directed by <%= link_to @movie.director.name, director_path(@movie.director) %></p>
   <p>Starring: </p>
 
   <% @movie.actors.each do |actor| %>
     <%= link_to actor.name, actor_path(actor) %> <br>
   <% end %>  
+  
+  <%= render 'viewings/viewing_status' %>
 </div>
-
-<%= render 'viewings/viewing_status' %>
