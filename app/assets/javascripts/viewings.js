@@ -6,7 +6,8 @@ $(function(){
 })
 
 function clickedYes() {
-  $("a.clicked-yes").on("click", function(e) {
+  // $("a.clicked-yes").on("click", function(e) {
+  $(document).on("click", "a.clicked-yes", function(e) {
     e.preventDefault();
     $.get(this.href).success(function(response){
       $(".viewing").html("").append(response);
