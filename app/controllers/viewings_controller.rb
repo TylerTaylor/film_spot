@@ -4,13 +4,13 @@ class ViewingsController < ApplicationController
 
   def new
     @viewing = Viewing.new
-    binding.pry
+    # binding.pry
 
     render 'viewings/new', layout: false
   end
 
   def create
-    binding.pry
+    # binding.pry
     @user.viewings.build(viewing_params)
     @viewing = @user.viewings.last
     @user.save
