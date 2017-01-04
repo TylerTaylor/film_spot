@@ -2,7 +2,11 @@
 <hr>
 
 <div class="show-card">
-  <% @directors.each do |director| %>
-    <%= link_to director.name, director_path(director) %> <br><br>
-  <% end %>
+  <ul style="list-style: none; padding-left: 0px">
+    <% @directors.each do |director| %>
+      <li class="director-<%= director.id %>">
+        <%= link_to director.name, director_path(director), class: "director-js" %> <br><br>
+      </li>
+    <% end %>
+  </ul>
 </div>
