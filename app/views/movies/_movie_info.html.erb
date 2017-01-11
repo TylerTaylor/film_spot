@@ -2,6 +2,7 @@
   <% if request.path == "/movies/random_movie_picker" %>
     <h3 class="center"><%= @movie.title %></h3>
   <% end %>
+  <hr>
 
   <p>Directed by <%= link_to @movie.director.name, director_path(@movie.director) %></p>
   <p>Starring: </p>
