@@ -17,8 +17,9 @@ body {
   margin: auto;
   margin-top: 80px;
   background-color: #fff;
-  height: 100vh;
+  // height: 100vh;
   border-radius: 6px;
+  padding-bottom: 20px;
   // -webkit-box-shadow: -1px 1px 6px 0px rgba(0,0,0,0.75);
   // -moz-box-shadow: -1px 1px 6px 0px rgba(0,0,0,0.75);
   // box-shadow: -1px 1px 6px 0px rgba(0,0,0,0.75);
@@ -112,4 +113,17 @@ p {
 
 .btn-orange {
   background-color: #ed9e5e;
+}
+
+// .director-movies {
+//   margin-left: 20px;
+// }
+
+.showing-movies {
+  background: #fff;
+  margin-bottom: 20px;
+  // max-width: 20%;
+  -webkit-box-shadow: -2px 2px 7px 2px rgba(0,0,0,0.45);
+  -moz-box-shadow: -2px 2px 7px 2px rgba(0,0,0,0.45);
+  box-shadow: -2px 2px 7px 2px rgba(0,0,0,0.45);
 }
