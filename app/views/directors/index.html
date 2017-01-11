@@ -1,12 +1,22 @@
 <h2>Directors</h2>
 <hr>
 
-<div class="show-card">
-  <ul style="list-style: none; padding-left: 0px">
-    <% @directors.each do |director| %>
-      <li class="director-<%= director.id %>">
-        <%= link_to director.name, director_path(director), class: "director-js" %> <br><br>
-      </li>
-    <% end %>
-  </ul>
+<p class="center">Click a director's name to view their movies.</p> <br>
+
+<div class="show-card container">
+  <div class="row">
+
+  <% @directors.in_groups_of(8, false) do |director_group| %>
+    <div class="col-md-6">
+      <ul style="list-style: none; padding-left: 0px">
+        <% for director in director_group %>
+          <li class="center director-<%= director.id %>">
+            <%= link_to director.name, director_path(director), class: "director-js" %> <br><br>
+          </li>
+        <% end %>
+      </ul>
+    </div> <!-- end col -->
+  <% end %>
+
+  </div> <!-- end row -->
 </div>
