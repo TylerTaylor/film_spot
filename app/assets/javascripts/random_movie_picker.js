@@ -28,7 +28,7 @@ function Suggestion(id, title, director, description, actors, intended_user) {
 
 Suggestion.prototype.formatSuggestion = function() {
   let html = ''
-  html += `<h3 class="center">${this.title}</h3>`
+  html += `<h3 class="center">${this.title}</h3><hr>`
   html += this.directorLink()
   html += '<p>Starring:</p>'
   html += this.actorsLinks()
