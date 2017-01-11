@@ -2,7 +2,18 @@ $(function(){
   // grab the director link
   $(".director-js").on("click", function(e){
     e.preventDefault();
+
+    // this closes one directors card while opening another
+    // but it won't close the currently open card when you click on it...
+    // $('li').removeClass("showing-movies")
+    // $('.director-movies').remove()
+    // debugger;
+    // tryThis()
+    // showingMovies = false
+    // debugger;
+
     $.getJSON(this.href).success(function(resp){
+      // debugger;
       let director = new Director(resp.id, resp.movies, resp.name)
       let movies = director.formatMovies()
 
@@ -34,24 +45,14 @@ Director.prototype.formatMovies = function() {
   return html
 }
 
-let showingMovies = false
-
-// function toggleMovies(director, formattedMovies) {
-//   if (showingMovies == false) { // if we aren't currently displaying a director's movies
-//     $(`.director-${director.id}`).append(formattedMovies); // display them
-//     showingMovies = true
-//   } else if (showingMovies == true) { // if the movies are displaying
-//     $('.director-movies').remove() // remove the div
-//     showingMovies = false 
-//   }
-// }
-
 Director.prototype.toggleMovies = function() {
-  if (showingMovies == false) { // if we aren't currently displaying a director's movies
-    $(`.director-${this.id}`).append(this.formatMovies()); // display them
-    showingMovies = true
-  } else if (showingMovies == true) { // if the movies are displaying
-    $('.director-movies').remove() // remove the div
-    showingMovies = false 
+  let $link = $(`.director-${this.id}`)
+
+  $('li').not($link).removeClass("showing-movies") // remove showing-movies class from every li besides the one we clicked
+  $('.director-movies').remove()
+  $link.toggleClass("showing-movies")
+
+  if ($link.hasClass("showing-movies")) {
+    $link.append(this.formatMovies()) // display the movies
   }
 }
