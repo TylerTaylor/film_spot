@@ -47,7 +47,6 @@ Suggestion.prototype.actorsLinks = function() {
   let actors = this.actors
 
   for (let i = 0; i < actors.length; i++) {
-    // html += '<a href="/actors/' + actors[i].id + '">' + actors[i].name + '</a><br>'
     html += `<a href="/actors/${actors[i].id}">${actors[i].name}</a><br>`
   }
 
@@ -56,7 +55,7 @@ Suggestion.prototype.actorsLinks = function() {
 
 Suggestion.prototype.viewingLink = function() {
   let html = '<div class="viewing center"><p>Have you seen this movie?</p>'
-  // html += '<p><a class="clicked-yes" href="/users/' + this.intended_user + '/viewings/new?movie_id=' + this.id + '">Yes</a>'
+  
   html += `<p><a class="clicked-yes" href="/users/${this.intended_user}/viewings/new?movie_id=${this.id}">Yes</a>`
 
   return html
